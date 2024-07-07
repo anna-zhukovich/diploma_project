@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        // "baseUrl": "https://www.automationexercise.com/",
+        "target": "es2016",
+        "lib": ["DOM","es6"],
+        "module": "commonjs",
+        "types": [
+            "@types/node",
+            "@types/jest",
+            "@types/superagent"
+        ],
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": false,
+        "allowJs": true,
+        "checkJs": false
+    }
+}
