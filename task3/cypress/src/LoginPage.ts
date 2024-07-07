@@ -21,6 +21,9 @@ class LoginPage extends BasePage {
   private lostPasswordLinkSelector: string =
     'a[href="https://www.onlineshopdemo.co.uk/lost-password/"]';
 
+   private fieldUsername:string = "#username";
+   private fieldPassword:string = "#password";
+
   clickOnRegisteredButtonOnLoginPage() {
     cy.get(this.registeredButton).first().click();
   }
@@ -70,6 +73,23 @@ class LoginPage extends BasePage {
   verifyLostPasswordLinkVisible() {
     cy.get(this.lostPasswordLinkSelector).should("be.visible");
   }
-}
 
+  pageReload() {
+    cy.window().then((win) => {
+      win.beforeReload = true;
+    });
+  }
+
+  pageReloadTrack() {
+    cy.window().should("not.have.prop", "beforeReload");
+  }
+
+  fillUsernameField(email) {
+    cy.get(this.fieldUsername).type(email);
+  }
+
+  fillPasswordField(password) {
+    cy.get(this.fieldPassword).type(password);
+  }
+}
 export default LoginPage;

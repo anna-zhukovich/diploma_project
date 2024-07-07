@@ -38,25 +38,18 @@ describe("Online Store UI-Tests", () => {
   it("4 - Check displaying error message for invalid credentials", () => {
     cy.fixture("creds.json").then((creds: { email: any; password: any }) => {
       const { email, password } = creds;
-      const homepage = PageFactory.getPage("home");
+      const homepage = PageFactory.getPage("home") as HomePage;
       homepage.clickLogInButton();
-      const loginpage = PageFactory.getPage("login");
+      const loginpage = PageFactory.getPage("login") as LoginPage;
 
-      // page reload track code
-      cy.window().then((win) => {
-        win.beforeReload = true;
-      });
-      // page reload track code
-
-      cy.get("#username").type(email);
-      cy.get("#password").type(password);
+      loginpage.pageReload();
+      loginpage.fillUsernameField(email);
+      loginpage.fillPasswordField(password);
       loginpage.clickOnLoginButtonOnLoginPage();
 
-      // page reload track code
-      cy.window().should("not.have.prop", "beforeReload");
-
-      cy.get("#username").type(email);
-      cy.get("#password").type(password);
+      loginpage.pageReloadTrack();
+      loginpage.fillUsernameField(email);
+      loginpage.fillPasswordField(password);
       loginpage.clickOnLoginButtonOnLoginPage();
       loginpage.verifyErrorMessageWrongLoginPassword();
     });
@@ -66,13 +59,9 @@ describe("Online Store UI-Tests", () => {
     const homepage = PageFactory.getPage("home");
     homepage.clickLogInButton();
     const loginpage = PageFactory.getPage("login");
-    // page reload track code
-    cy.window().then((win) => {
-      win.beforeReload = true;
-    });
+    loginpage.pageReload();
     loginpage.clickOnLoginButtonOnLoginPage();
-    // page reload track code
-    cy.window().should("not.have.prop", "beforeReload");
+    loginpage.pageReloadTrack();
     loginpage.clickOnLoginButtonOnLoginPage();
     loginpage.verifyErrorMessageLoginWithEmptyFields();
   });

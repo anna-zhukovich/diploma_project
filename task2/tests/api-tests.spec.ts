@@ -7,7 +7,7 @@ import {
   putRequest,
   patchRequest,
   deleteRequest,
-} from "./const";
+} from "../consts/consts";
 
 describe("API tests method Get", () => {
   it("1 - Get - Check that all posts will be back", async () => {
@@ -29,7 +29,6 @@ describe("API tests method Get", () => {
 
   it("3 - Get - Check that comments by postId will be back", async () => {
     const postId = 1;
-    //const result = await superagent.get(`${baseUrl}posts/${postId}/comments`);
     const endpoint = `${baseUrl}posts/${postId}/comments`;
     const result = await getRequest(endpoint);
     expect(result.status).toBe(200);
@@ -48,7 +47,6 @@ describe("API tests method Get", () => {
     const endpoint = `${baseUrl}comments`;
     const queryParams = { postId: postId };
     const result = await getRequest(endpoint, queryParams);
-    //https://jsonplaceholder.typicode.com/comments?postId=1
     expect(result.status).toBe(200);
     expect(result.body).toBeInstanceOf(Array);
     expect(
@@ -65,15 +63,8 @@ describe("API tests method Get", () => {
 
   it("5 - Get - Check that API correctly handles the case where user use non-existent  postId", async () => {
     const invalidPostId = 999991111127293792173971982;
-    // const params = { postId: invalidPostId };
-    // const endpoint = `${baseUrl}/posts/${params}/comments`;
     const endpoint = `${baseUrl}/posts/${invalidPostId}/comments`;
-
-    // const queryParams = { postId: invalidPostId };
     const response = await getRequest(endpoint);
-    console.log(endpoint);
-    // console.log(response.body)
-
     expect(response.body).toEqual([]);
     expect(response.status).toBe(200);
   });
@@ -89,7 +80,6 @@ describe("API tests method Get", () => {
 
 describe("API tests method Post", () => {
   it("1 - Post - Check creating post", async () => {
-    //   const result = await superagent.get(`${baseUrl}posts`);
     const endpoint = `${baseUrl}posts`;
     const newPost = {
       title: "testв1",
@@ -100,16 +90,13 @@ describe("API tests method Post", () => {
 
     const response = await postRequest(endpoint, newPost);
 
-    console.log(response);
     expect(response.body.title).toBe(newPost.title);
     expect(response.body.body).toBe(newPost.body);
     expect(response.body.userId).toBe(newPost.userId);
     expect(response.body).toHaveProperty("id");
-    //expect(response.body.id).toBe(newPost.id);
   });
 
   it("2 - Post - Check resons body - json", async () => {
-    //   const result = await superagent.get(`${baseUrl}posts`);
     const endpoint = `${baseUrl}posts`;
     const newPost = {
       title: "Test post",
@@ -121,7 +108,6 @@ describe("API tests method Post", () => {
   });
 
   it("3 - Post - Check response id - number", async () => {
-    //   const result = await superagent.get(`${baseUrl}posts`);
     const endpoint = `${baseUrl}posts`;
     const newPost = {
       title: "Test post",
@@ -133,7 +119,6 @@ describe("API tests method Post", () => {
   });
 
   it("4 - Post - Check  post request by not exist url", async () => {
-    //   const result = await superagent.get(`${baseUrl}posts`);
     const endpoint = `${baseUrl}postst`;
 
     const newPost = {
@@ -146,7 +131,6 @@ describe("API tests method Post", () => {
   });
 
   it("5 - Post - Check creating post -  Status 201", async () => {
-    //   const result = await superagent.get(`${baseUrl}posts`);
     const endpoint = `${baseUrl}posts`;
     const newPost = {
       title: "Test post",
@@ -156,8 +140,6 @@ describe("API tests method Post", () => {
 
     const response = await postRequest(endpoint, newPost);
     expect(response.status).toBe(201);
-    // expect(response.body).toHaveProperty('id');
-    // expect(response.body.userId).toBe(newPost.userId);
   });
 });
 

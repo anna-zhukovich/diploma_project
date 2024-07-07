@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
-<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1720256475624' stop='1720256550123'>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1720368221162' stop='1720368292971'>
     <name>Online Store UI-Tests</name>
     <title>Online Store UI-Tests</title>
     <test-cases>
-        <test-case start='1720256475624' status='passed' stop='1720256480397'>
+        <test-case start='1720368221162' status='passed' stop='1720368226047'>
             <name>1 - Check that login form is displayed after clicking on Login button</name>
             <title>1 - Check that login form is displayed after clicking on Login button</title>
             <labels/>
@@ -11,7 +11,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256480421' status='passed' stop='1720256485043'>
+        <test-case start='1720368226073' status='passed' stop='1720368230804'>
             <name>2 - Check that login form is displayed after clicking on Login button on Login Page</name>
             <title>2 - Check that login form is displayed after clicking on Login button on Login Page</title>
             <labels/>
@@ -19,7 +19,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256485068' status='passed' stop='1720256486401'>
+        <test-case start='1720368230836' status='passed' stop='1720368232169'>
             <name>3 - Check that registration from is displayed after clicking on Registered button on Login Page</name>
             <title>3 - Check that registration from is displayed after clicking on Registered button on Login Page</title>
             <labels/>
@@ -27,7 +27,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256486417' status='passed' stop='1720256494335'>
+        <test-case start='1720368232182' status='passed' stop='1720368240999'>
             <name>4 - Check displaying error message for invalid credentials</name>
             <title>4 - Check displaying error message for invalid credentials</title>
             <labels/>
@@ -35,7 +35,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256494357' status='passed' stop='1720256501560'>
+        <test-case start='1720368241021' status='passed' stop='1720368248589'>
             <name>5 - Check displaying error message when a user tries to log in with empty fields</name>
             <title>5 - Check displaying error message when a user tries to log in with empty fields</title>
             <labels/>
@@ -43,7 +43,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256501577' status='passed' stop='1720256502342'>
+        <test-case start='1720368248615' status='passed' stop='1720368249750'>
             <name>6 - Check displaying Lost your password button on Log in Page</name>
             <title>6 - Check displaying Lost your password button on Log in Page</title>
             <labels/>
@@ -51,7 +51,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256502364' status='passed' stop='1720256516678'>
+        <test-case start='1720368249765' status='passed' stop='1720368263558'>
             <name>7 - Check button Add to Bucket is not active</name>
             <title>7 - Check button Add to Bucket is not active</title>
             <labels/>
@@ -59,7 +59,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256516729' status='passed' stop='1720256528854'>
+        <test-case start='1720368263582' status='passed' stop='1720368273696'>
             <name>8 - Check button Add to Bucket is not active when a user chooses only Color</name>
             <title>8 - Check button Add to Bucket is not active when a user chooses only Color</title>
             <labels/>
@@ -67,7 +67,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256528884' status='passed' stop='1720256539684'>
+        <test-case start='1720368273721' status='passed' stop='1720368283171'>
             <name>9 - Check button Add to Bucket is not active when a user chooses only Size</name>
             <title>9 - Check button Add to Bucket is not active when a user chooses only Size</title>
             <labels/>
@@ -75,7 +75,7 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1720256539716' status='passed' stop='1720256550123'>
+        <test-case start='1720368283202' status='passed' stop='1720368292971'>
             <name>10 - Check pop-up is dispalyed when a user clicks on Size Guide Link </name>
             <title>10 - Check pop-up is dispalyed when a user clicks on Size Guide Link </title>
             <labels/>
